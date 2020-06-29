@@ -1,0 +1,15 @@
+- value: Resources
+  slug: /category
+  subMenu:
+    - value: 3 mins drills
+      slug: /3-mins-drill
+    - value: What? Why? How?
+      slug: /what-why-how
+    - value: Free exercise programmes
+      slug: https://healthylivingscience.com/projects/online-exercise-based-sports-injury-risk-reduction-programmes
+
+- value: About
+  slug: /about
+
+- value: Contact
+  slug: /contact

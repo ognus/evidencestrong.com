@@ -1,0 +1,70 @@
+- name: Sports
+  tags:
+    - American football
+    - Basketball
+    - Bodybuilding
+    - CrossFit
+    - Floorball
+    - Highland Games
+    - Orienteering
+    - Powerlifting
+    - Rugby
+    - Running
+    - Soccer
+    - Strongman
+    - Tennis
+    - Volleyball
+    - Weightlifting
+
+- name: Athletes
+  tags:
+    - Adolescent athlete
+    - Child athlete
+    - Collegiate athlete
+    - Elite athlete
+    - Female athlete
+    - Novice athlete
+    - Recreational athlete
+
+- name: Study designs
+  tags:
+    - Cohort study
+    - Crossover design
+    - Cross-sectional
+    - Editorial
+    - Meta-analysis
+    - RCT
+    - Review
+    - Survey
+
+- name: Others
+  tags:
+    - ACL
+    - Age
+    - Breast
+    - Caffeine
+    - CORE training
+    - Exercise programme
+    - Foam rolling
+    - Hamstring
+    - Injury prevention
+    - Injury risk
+    - Injury risk reduction in sport
+    - Mental health
+    - Nutrition
+    - Osteoarthritis
+    - Pelvic floor
+    - Performance
+    - Performance tests
+    - Plyometrics
+    - Pregnancy
+    - Protein
+    - Return to sport
+    - Risk assessment
+    - Sleep
+    - Specialization
+    - Strength
+    - Testosterone
+    - Training load
+    - Urinary incontinence
+    - e-intervention

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="evidencestrongcom">evidencestrong.com</h1>
+<p>It's a snapshot copy of a private repo. It does not contain all content (posts) of the https://evidencestrong.com website.</p>
+<p>Built with Gatsby, React, Styled components (Emotion), MDX, Formik, Netlify, Github actions.</p>
+<h2 id="features">Features</h2>
+<h3 id="responsive-tables">Responsive tables</h3>
+<p><img src="docs/images/responsive-table.gif" alt="Responsive table UI animation"></p>
+<p>Usage:</p>
+<pre class="hljs"><code><div>&lt;Table&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span> <span class="hljs-attr">header</span> <span class="hljs-attr">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span> <span class="hljs-attr">label</span>&gt;</span>Snatch<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span> <span class="hljs-attr">label</span>&gt;</span>Clean <span class="hljs-symbol">&amp;amp;</span> jerk<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span> <span class="hljs-attr">header</span>&gt;</span>Average age at peak performance [years]<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span>&gt;</span>25.6<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span>&gt;</span>25.5<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span> <span class="hljs-attr">header</span>&gt;</span>Youngest [years] (weight class)<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span>&gt;</span>24.3 (69 kg)<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span>&gt;</span>24.3 (53 kg)<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span> <span class="hljs-attr">header</span>&gt;</span>Oldest [years] (weight class)<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span>&gt;</span>27.2 (63 kg)<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span>&gt;</span>27.1 (75 kg)<span class="hljs-tag">&lt;/<span class="hljs-name">Cell</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Cell</span> <span class="hljs-attr">footer</span> /&gt;</span></span>
+&lt;<span class="hljs-regexp">/Table&gt;
+</span></div></code></pre>
+<ul>
+<li>Implementation: <a href="%60./src/components/widgets/table.js%60"><code>./src/components/widgets/table.js</code></a>.</li>
+<li>Usage example: <a href="./content/posts/at-what-age-are-we-the-strongest-surprising-truth.mdx"><code>./content/posts/at-what-age-are-we-the-strongest-surprising-truth.mdx</code></a> and other posts.</li>
+</ul>
+<h3 id="taxonomy">Taxonomy</h3>
+<ul>
+<li>Posts categories (<code>./content/data/categories.yaml</code>).</li>
+<li>Two-level tags (tags groups) defined at <code>./content/data/tag-groups.yaml</code>, and searchable:</li>
+</ul>
+<p><img src="docs/images/tags.jpg" alt="Tags .yaml file and UI screenshot"></p>
+<h3 id="drafts-and-posts-scheduling">Drafts and posts scheduling</h3>
+<ul>
+<li>Posts drafts support as a custom plugin (<code>./plugins/drafts/gatsby-node.js</code>). Only post that have specifed date and the date is in the past, will be visible after production build.</li>
+<li>Posts scheduling using Github actions to automically trigger Netlify builds:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-attr">name:</span> <span class="hljs-string">Trigger</span> <span class="hljs-string">Netlify</span> <span class="hljs-string">Build</span>
+<span class="hljs-attr">on:</span>
+  <span class="hljs-attr">schedule:</span>
+    <span class="hljs-comment"># Run at 1:00 am UTC (10:00 am Tokyo time) on Tue and Thu</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">cron:</span> <span class="hljs-string">"0 1 * * 2,4"</span>
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">Request</span> <span class="hljs-string">Netlify</span> <span class="hljs-string">Webhook</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Curl</span> <span class="hljs-string">request</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">curl</span> <span class="hljs-string">-X</span> <span class="hljs-string">POST</span> <span class="hljs-string">-d</span> <span class="hljs-string">{}</span> <span class="hljs-string">https://api.netlify.com/build_hooks/XXX</span>
+</div></code></pre>
+<h3 id="contact-form">Contact form</h3>
+<p>Contact form using Formik (<code>./src/components/contact-form.js</code>) and Netlify Forms.</p>
+<h3 id="seo">SEO</h3>
+<ul>
+<li>SchemaOrg</li>
+<li>Open Graph</li>
+<li>Twitter Cards</li>
+</ul>
+<h3 id="dropdown-menu">Dropdown menu</h3>
+<p><img src="docs/images/menu.gif" alt="Dropdown menu UI animation"></p>
+<p>Configurable dropdown menu <code>./content/data/menu.yaml</code>:</p>
+<pre class="hljs"><code><div><span class="hljs-bullet">-</span> <span class="hljs-attr">value:</span> <span class="hljs-string">Resources</span>
+  <span class="hljs-attr">slug:</span> <span class="hljs-string">/category</span>
+  <span class="hljs-attr">subMenu:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">value:</span> <span class="hljs-number">3</span> <span class="hljs-string">mins</span> <span class="hljs-string">drills</span>
+      <span class="hljs-attr">slug:</span> <span class="hljs-string">/3-mins-drill</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">value:</span> <span class="hljs-string">What?</span> <span class="hljs-string">Why?</span> <span class="hljs-string">How?</span>
+      <span class="hljs-attr">slug:</span> <span class="hljs-string">/what-why-how</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">value:</span> <span class="hljs-string">Free</span> <span class="hljs-string">exercise</span> <span class="hljs-string">programmes</span>
+      <span class="hljs-attr">slug:</span> <span class="hljs-string">https://healthylivingscience.com/projects/online-exercise-based-sports-injury-risk-reduction-programmes</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">value:</span> <span class="hljs-string">About</span>
+  <span class="hljs-attr">slug:</span> <span class="hljs-string">/about</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">value:</span> <span class="hljs-string">Contact</span>
+  <span class="hljs-attr">slug:</span> <span class="hljs-string">/contact</span>
+</div></code></pre>
+<h3 id="instagram-profile-links-list-page">Instagram profile links list page</h3>
+<p>Linktree-like page for sharing links in Instagram profile (<code>./src/pages/clickme.js</code>).</p>
+<h2 id="usage">Usage</h2>
+<pre class="hljs"><code><div><span class="hljs-comment"># install</span>
+yarn
+
+<span class="hljs-comment"># dev build and server</span>
+yarn start
+
+<span class="hljs-comment"># production build</span>
+yarn build
+</div></code></pre>
+
+</body>
+</html>
