@@ -8,14 +8,14 @@ Built with Gatsby, React, Styled components (Emotion), MDX, Formik, Netlify, Git
 
 ### Taxonomy
 
-- Posts categories (`./content/data/categories.yaml`).
-- Two-level tags (tags groups) defined at `./content/data/tag-groups.yaml`, and searchable:
+- Posts categories ([`./content/data/categories.yaml`](content/data/categories.yaml)).
+- Two-level tags (tags groups) defined at [`./content/data/tag-groups.yaml`](content/data/tag-groups.yaml), and searchable:
 
 ![Tags .yaml file and UI screenshot](docs/images/tags.jpg)
 
 ### Drafts and posts scheduling
 
-- Posts drafts support as a custom plugin (`./plugins/drafts/gatsby-node.js`). Only post that have specifed date and the date is in the past, will be visible after production build.
+- Posts drafts support as a custom plugin ([`./plugins/drafts/gatsby-node.js`](plugins/drafts/gatsby-node.js)). Only post that have specifed date and the date is in the past, will be visible after production build.
 - Posts scheduling using Github actions to automically trigger Netlify builds:
 
 ```yaml
@@ -57,12 +57,12 @@ Usage:
 </Table>
 ```
 
-- Implementation: [`./src/components/widgets/table.js`](`./src/components/widgets/table.js`).
-- Usage example: [`./content/posts/at-what-age-are-we-the-strongest-surprising-truth.mdx`](./content/posts/at-what-age-are-we-the-strongest-surprising-truth.mdx) and other posts.
+- Implementation: [`./src/components/widgets/table.js`](src/components/widgets/table.js).
+- Usage example: [`./content/posts/at-what-age-are-we-the-strongest-surprising-truth.mdx`](content/posts/at-what-age-are-we-the-strongest-surprising-truth.mdx) and other posts.
 
 ### Contact form
 
-Contact form using Formik (`./src/components/contact-form.js`) and Netlify Forms.
+Contact form using Formik ([`./src/components/contact-form.js`](src/components/contact-form.js)) and Netlify Forms.
 
 ### SEO
 
@@ -74,7 +74,7 @@ Contact form using Formik (`./src/components/contact-form.js`) and Netlify Forms
 
 ![Dropdown menu UI animation](docs/images/menu.gif)
 
-Configurable dropdown menu `./content/data/menu.yaml`:
+Configurable dropdown menu [`./content/data/menu.yaml`](content/data/menu.yaml):
 
 ```yaml
 - value: Resources
@@ -96,7 +96,7 @@ Configurable dropdown menu `./content/data/menu.yaml`:
 
 ### Instagram profile links list page
 
-Linktree-like page for sharing links in Instagram profile (`./src/pages/clickme.js`).
+Linktree-like page for sharing links in Instagram profile ([`./src/pages/clickme.js`](src/pages/clickme.js)).
 
 ## Usage
 
